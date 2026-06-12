@@ -13,7 +13,6 @@
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
 
-    // Close nav after clicking a link (mobile)
     nav.querySelectorAll('a').forEach(a => {
       a.addEventListener('click', () => {
         header.classList.remove('is-open');
@@ -33,4 +32,16 @@
   }
   updateHeader();
   window.addEventListener('scroll', updateHeader, { passive: true });
+
+  // Theme toggle (light/dark) — pure color swap, no layout impact
+  const themeToggle = document.getElementById('theme-toggle');
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+      const next = current === 'dark' ? 'light' : 'dark';
+      if (next === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+      else document.documentElement.removeAttribute('data-theme');
+      try { localStorage.setItem('heatamp-theme', next); } catch (e) {}
+    });
+  }
 })();

@@ -24,20 +24,26 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
+
+  <script>
+    // Default theme = light. Dark only if user has explicitly chosen it.
+    try { if (localStorage.getItem('heatamp-theme') === 'dark') document.documentElement.setAttribute('data-theme', 'dark'); } catch (e) {}
+  </script>
 </head>
 <body>
 
 <header class="site-header" id="site-header">
   <div class="wrap nav-wrap">
     <a href="#top" class="brand" aria-label="HeatAmp home">
-      <img src="assets/heatamp-logo.png" srcset="assets/heatamp-logo.png 1x, assets/heatamp-logo@2x.png 2x" alt="HeatAmp" height="40" />
+      <img class="brand-light" src="assets/heatamp-logo.png" srcset="assets/heatamp-logo.png 1x, assets/heatamp-logo@2x.png 2x" alt="HeatAmp" height="40" />
+      <img class="brand-dark" src="assets/heatamp-logo-white.png" srcset="assets/heatamp-logo-white.png 1x, assets/heatamp-logo-white@2x.png 2x" alt="HeatAmp" height="40" />
     </a>
     <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
       <span></span><span></span><span></span>
     </button>
     <nav id="primary-nav" class="primary-nav">
+      <a href="#opportunity">Opportunity</a>
       <a href="#technology">Technology</a>
-      <a href="#market">Market</a>
       <a href="#team">Team</a>
       <a href="#backers">Backed by</a>
       <a href="#contact" class="nav-cta">Contact</a>
@@ -59,8 +65,8 @@
           <a href="#technology" class="btn btn-ghost">How it works <span aria-hidden="true">↓</span></a>
         </div>
       </div>
-      <div class="hero-visual">
-        <img src="assets/images/product.png" srcset="assets/images/product.png 1x, assets/images/product@2x.png 2x" alt="HeatAmp gas heat pump water heater" />
+      <div class="hero-visual hero-visual-photo">
+        <img src="assets/images/in-home-bright.jpg" srcset="assets/images/in-home-bright.jpg 1x, assets/images/in-home-bright@2x.jpg 2x" alt="HeatAmp water heater installed in a North American home" />
       </div>
     </div>
   </section>
@@ -71,12 +77,12 @@
       <div class="section-head">
         <div class="eyebrow">The Problem</div>
         <h2>95% of America's gas water heaters run at minimum efficiency.</h2>
-        <p class="lede">4 million residential gas water heaters are sold in North America every year. Most operate at a Uniform Energy Factor of just 62–64%. As emissions targets tighten and gas prices climb, this is the largest untapped efficiency opportunity in residential heating.</p>
+        <p class="lede">4 million residential gas water heaters are sold in North America every year. Most operate at a Uniform Energy Factor of just 62–64%. As emissions targets tighten and gas prices climb, water heating is the largest untapped efficiency opportunity in residential heating. The transition is also driven by the societal push toward decarbonization and lower CO₂ emissions.</p>
       </div>
       <div class="stat-grid">
         <div class="stat">
           <div class="stat-value">4M</div>
-          <div class="stat-label">Gas water heaters sold annually in North America</div>
+          <div class="stat-label">Residential gas water heaters sold annually in North America</div>
         </div>
         <div class="stat">
           <div class="stat-value">62–64<span class="stat-unit">%</span></div>
@@ -84,7 +90,7 @@
         </div>
         <div class="stat">
           <div class="stat-value">12,500<span class="stat-unit">kWh</span></div>
-          <div class="stat-label">Gas burned to deliver 8,000 kWh of hot water</div>
+          <div class="stat-label">Gas burned to deliver 27 million Btu / 8,000 kWh — a single-family annual hot water consumption</div>
         </div>
       </div>
     </div>
@@ -93,11 +99,17 @@
   <!-- ===== SOLUTION ===== -->
   <section class="section" id="solution">
     <div class="wrap">
-      <div class="section-head">
-        <div class="eyebrow">The Solution</div>
-        <h2>A drop-in replacement. Twice as efficient.</h2>
-        <p class="lede">HeatAmp's gas heat pump water heater delivers 120% UEF — nearly double the industry standard — in the same footprint as a conventional unit. Patented in six jurisdictions.</p>
+      <div class="solution-intro">
+        <div class="solution-copy">
+          <div class="eyebrow">The Solution</div>
+          <h2>The smarter way to heat water.</h2>
+          <p class="lede">Replace your existing water heater with a high-efficiency solution that requires no gas or electricity upgrades, reduces energy costs and emissions, and delivers the same dependable comfort you've always enjoyed.</p>
+        </div>
+        <div class="solution-visual">
+          <img src="assets/images/product-solution.png" srcset="assets/images/product-solution.png 1x, assets/images/product-solution@2x.png 2x" alt="HeatAmp gas heat pump water heater" />
+        </div>
       </div>
+
       <div class="stat-grid stat-grid-accent">
         <div class="stat">
           <div class="stat-value">120<span class="stat-unit">%</span></div>
@@ -112,123 +124,44 @@
           <div class="stat-label">CO₂ avoided per home, per year</div>
         </div>
       </div>
+
+      <div class="savings-strip">
+        <span class="eyebrow savings-label">Potential savings</span>
+        <span class="savings-value">$200–500 / year</span>
+        <span class="savings-note">on household energy bills, depending on usage</span>
+      </div>
+
       <div class="patents-strip">
         <span class="eyebrow patents-label">Patents</span>
-        <span class="patents-list">United States · United Kingdom · European Union · China · India · Japan</span>
+        <span class="patents-list">United States · United Kingdom · Europe (EPO) · China · India · Japan</span>
       </div>
+
+      <div class="feature-grid">
+        <article class="feature">
+          <h3>Designed for Manufacturing, Built for Growth</h3>
+          <p>The unique proprietary low-complexity architecture enables a compact, robust and cost-efficient design that supports scalable manufacturing and broad residential adoption. The technology delivers high-efficiency water heating in a drop-in format, fitting within the footprint of a conventional gas-fired storage water heater and requiring no gas or electrical infrastructure upgrades.</p>
+        </article>
+        <article class="feature">
+          <h3>Safe and Sustainable Design</h3>
+          <p>The thermochemical heat pump is hermetically sealed and uses a natural refrigerant with zero ozone depletion potential (ODP) and zero global warming potential (GWP). The system is designed to deliver robust long-term performance whilst minimizing environmental impact.</p>
+        </article>
+        <article class="feature">
+          <h3>Lower Bills. Same Comfort.</h3>
+          <p>By producing the same amount of hot water with substantially less gas, HeatAmp can reduce water-heating energy consumption by up to 50%, helping households lower their utility bills without sacrificing comfort or performance.</p>
+        </article>
+      </div>
+
+      <p class="solution-closing">We lead development of drop-in replacement gas-driven heat pump water heaters.</p>
     </div>
   </section>
 
-  <!-- ===== HOW IT WORKS ===== -->
-  <section class="section section-alt" id="technology">
+  <!-- ===== OPPORTUNITY (formerly Market) ===== -->
+  <section class="section section-alt" id="opportunity">
     <div class="wrap">
       <div class="section-head">
-        <div class="eyebrow">Technology</div>
-        <h2>Heat-driven sorption. No moving parts.</h2>
-        <p class="lede">HeatAmp uses chemisorption — a thermal compressor that stores energy in a salt matrix and releases it as heat on demand. No electrical upgrade. No compressor maintenance. Hermetically sealed for the long haul.</p>
-      </div>
-
-      <div class="diagram-wrap">
-        <svg class="sorption-diagram" viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="sorp-title sorp-desc">
-          <title id="sorp-title">Sorption heat pump process</title>
-          <desc id="sorp-desc">Two-phase batch process: phase one desorbs refrigerant from a salt matrix using heat from a burner; phase two absorbs refrigerant back into the salt, releasing heat.</desc>
-
-          <!-- Phase 1 -->
-          <g transform="translate(40,40)">
-            <rect x="0" y="0" width="340" height="280" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
-            <text x="170" y="32" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#0f172a" letter-spacing="0.5">1. DESORPTION</text>
-            <text x="170" y="52" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#64748b">Heat in · Energy stored in salt crystals</text>
-
-            <!-- Chamber A (with salt) -->
-            <rect x="40" y="80" width="100" height="160" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
-            <text x="90" y="100" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#475569" font-weight="500">SALT</text>
-            <!-- Salt crystals (small diamonds) -->
-            <g fill="#c8102e" opacity="0.85">
-              <polygon points="65,140 70,135 75,140 70,145"/>
-              <polygon points="85,150 90,145 95,150 90,155"/>
-              <polygon points="110,140 115,135 120,140 115,145"/>
-              <polygon points="75,170 80,165 85,170 80,175"/>
-              <polygon points="100,175 105,170 110,175 105,180"/>
-              <polygon points="65,195 70,190 75,195 70,200"/>
-              <polygon points="95,200 100,195 105,200 100,205"/>
-              <polygon points="115,210 120,205 125,210 120,215"/>
-            </g>
-
-            <!-- Arrow refrigerant out (right) -->
-            <path d="M 145 160 L 190 160" stroke="#c8102e" stroke-width="2" fill="none" marker-end="url(#arrowRed)"/>
-            <text x="167" y="150" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#c8102e" font-weight="600">refrigerant</text>
-
-            <!-- Chamber B (condenser) -->
-            <rect x="200" y="80" width="100" height="160" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
-            <text x="250" y="100" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#475569" font-weight="500">CONDENSER</text>
-            <!-- Heat waves out top -->
-            <g stroke="#c8102e" stroke-width="1.6" fill="none" stroke-linecap="round">
-              <path d="M 230 130 q 5 -8 10 0 q 5 8 10 0 q 5 -8 10 0"/>
-              <path d="M 230 145 q 5 -8 10 0 q 5 8 10 0 q 5 -8 10 0"/>
-            </g>
-            <text x="250" y="220" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#0f172a" font-weight="600">heat out</text>
-
-            <!-- Bottom burner indicator -->
-            <text x="170" y="265" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#475569">↑ burner heat in</text>
-          </g>
-
-          <!-- Phase 2 -->
-          <g transform="translate(420,40)">
-            <rect x="0" y="0" width="340" height="280" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
-            <text x="170" y="32" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#0f172a" letter-spacing="0.5">2. ABSORPTION</text>
-            <text x="170" y="52" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#64748b">Energy released as useful heat</text>
-
-            <!-- Chamber A (salt re-absorbing) -->
-            <rect x="40" y="80" width="100" height="160" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
-            <text x="90" y="100" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#475569" font-weight="500">SALT</text>
-            <g fill="#c8102e" opacity="0.85">
-              <polygon points="65,140 70,135 75,140 70,145"/>
-              <polygon points="85,150 90,145 95,150 90,155"/>
-              <polygon points="110,140 115,135 120,140 115,145"/>
-              <polygon points="75,170 80,165 85,170 80,175"/>
-              <polygon points="100,175 105,170 110,175 105,180"/>
-              <polygon points="65,195 70,190 75,195 70,200"/>
-              <polygon points="95,200 100,195 105,200 100,205"/>
-              <polygon points="115,210 120,205 125,210 120,215"/>
-            </g>
-            <!-- Heat waves out top of salt -->
-            <g stroke="#c8102e" stroke-width="1.6" fill="none" stroke-linecap="round">
-              <path d="M 60 122 q 5 -8 10 0 q 5 8 10 0 q 5 -8 10 0"/>
-              <path d="M 80 110 q 5 -8 10 0 q 5 8 10 0 q 5 -8 10 0"/>
-            </g>
-
-            <!-- Arrow refrigerant back (left) -->
-            <path d="M 190 160 L 145 160" stroke="#0f172a" stroke-width="2" fill="none" marker-end="url(#arrowDark)"/>
-            <text x="167" y="150" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#0f172a" font-weight="600">refrigerant</text>
-
-            <!-- Chamber B (evaporator) -->
-            <rect x="200" y="80" width="100" height="160" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
-            <text x="250" y="100" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#475569" font-weight="500">EVAPORATOR</text>
-            <text x="250" y="220" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#0f172a" font-weight="600">low-temp heat in</text>
-            <text x="170" y="265" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#475569">↓ useful heat out</text>
-          </g>
-
-          <defs>
-            <marker id="arrowRed" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-              <path d="M0,0 L6,4 L0,8 Z" fill="#c8102e"/>
-            </marker>
-            <marker id="arrowDark" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-              <path d="M0,0 L6,4 L0,8 Z" fill="#0f172a"/>
-            </marker>
-          </defs>
-        </svg>
-        <p class="diagram-caption"><strong>Hermetically sealed heat pump module. No moving parts.</strong> The batch process repeats every cycle — burner heat drives the chemistry on the way in, useful hot water comes out on the way back.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== MARKET ===== -->
-  <section class="section" id="market">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="eyebrow">Market</div>
-        <h2>A $2.7B replacement market — looking for a winner.</h2>
-        <p class="lede">4 million gas water heaters are replaced annually in North America. The high-efficiency segment is just 5% today — but tightening regulation is projected to grow it to 40%. HeatAmp is positioned to claim the cost-effective end of that growth.</p>
+        <div class="eyebrow">Opportunity</div>
+        <h2 class="display opportunity-headline">A $2.7B replacement market in transition.</h2>
+        <p class="lede">4 million gas water heaters are replaced annually in North America. Today, high-efficiency models represent only ~5% of the market, but tightening regulations are expected to drive that share toward 40%. HeatAmp is positioned to claim the cost-effective end of that growth.</p>
       </div>
 
       <div class="funnel-wrap">
@@ -236,32 +169,87 @@
           <title id="funnel-title">Total addressable market funnel</title>
           <desc id="funnel-desc">Three-tier funnel showing TAM 32.2 billion dollars global water heaters, SAM 2.7 billion dollars North American gas water heater market, SOM 1.08 billion dollars high-performance segment.</desc>
 
-          <!-- TAM -->
-          <polygon points="100,40 700,40 620,140 180,140" fill="#0f172a"/>
+          <polygon class="funnel-tier-tam" points="100,40 700,40 620,140 180,140" fill="#0f172a"/>
           <text x="400" y="80" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#94a3b8" letter-spacing="2">TAM · GLOBAL WATER HEATERS</text>
           <text x="400" y="115" text-anchor="middle" font-family="Inter, sans-serif" font-size="28" font-weight="800" fill="#ffffff" letter-spacing="-0.5">$32.2B</text>
 
-          <!-- SAM -->
-          <polygon points="180,150 620,150 540,250 260,250" fill="#334155"/>
+          <polygon class="funnel-tier-sam" points="180,150 620,150 540,250 260,250" fill="#334155"/>
           <text x="400" y="190" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#cbd5e1" letter-spacing="2">SAM · NA GAS WATER HEATERS / YR</text>
           <text x="400" y="225" text-anchor="middle" font-family="Inter, sans-serif" font-size="28" font-weight="800" fill="#ffffff" letter-spacing="-0.5">$2.7B</text>
 
-          <!-- SOM -->
-          <polygon points="260,260 540,260 460,360 340,360" fill="#c8102e"/>
+          <polygon class="funnel-tier-som" points="260,260 540,260 460,360 340,360" fill="#c8102e"/>
           <text x="400" y="298" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#ffffff" letter-spacing="2" opacity="0.85">SOM · HIGH-PERFORMANCE</text>
           <text x="400" y="332" text-anchor="middle" font-family="Inter, sans-serif" font-size="26" font-weight="800" fill="#ffffff" letter-spacing="-0.5">$1.08B</text>
 
-          <!-- Side label with growth note -->
-          <line x1="570" y1="310" x2="640" y2="310" stroke="#cbd5e1" stroke-width="1"/>
-          <text x="650" y="302" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#0f172a">5% → 40%</text>
-          <text x="650" y="320" font-family="Inter, sans-serif" font-size="10" fill="#64748b">projected segment growth</text>
+          <line class="funnel-aside-line" x1="570" y1="310" x2="640" y2="310" stroke="#cbd5e1" stroke-width="1"/>
+          <text class="funnel-aside-label" x="650" y="302" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#0f172a">5% → 40%</text>
+          <text class="funnel-aside-note" x="650" y="320" font-family="Inter, sans-serif" font-size="10" fill="#64748b">projected segment growth</text>
         </svg>
       </div>
     </div>
   </section>
 
+  <!-- ===== TECHNOLOGY ===== -->
+  <section class="section" id="technology">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Technology</div>
+        <h2>The thermochemical heat pump.</h2>
+        <p class="lede">The HeatAmp water heater combines a high-efficiency gas burner with a novel thermochemical heat pump to produce hot water using significantly less gas than conventional water heaters.</p>
+      </div>
+
+      <div class="diagram-wrap">
+        <img class="tech-diagram" src="assets/diagrams/thermochemical.png" srcset="assets/diagrams/thermochemical.png 1x, assets/diagrams/thermochemical@2x.png 2x" alt="Thermochemical process: two-stage cycle showing energy storage and heat recovery" />
+        <p class="diagram-caption">The figure illustrates the principle of a thermochemical process.</p>
+      </div>
+
+      <div class="feature-grid">
+        <article class="feature">
+          <h3>Why It Is More Efficient</h3>
+          <p>The majority of conventional gas water heaters typically achieve efficiencies around 60%. By combining gas combustion with ambient heat recovery, the HeatAmp system can achieve gas efficiencies of 120–125%. This means more hot water from every unit of gas consumed, reducing both heating costs and environmental impact.</p>
+        </article>
+        <article class="feature">
+          <h3>Designed for Success</h3>
+          <p>The scalable, low-complexity architecture enables significant reductions in size and cost, making it well-suited for large-scale manufacturing and residential deployment.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 7 YEARS OF DEVELOPMENT ===== -->
+  <section class="section section-alt" id="development">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">7 Years of Development</div>
+        <h2>From breadboard to engineered prototype.</h2>
+        <p class="lede">Built from the ground up over the past seven years in collaboration with leading industry partners. Progressing from early breadboard systems to fully engineered prototypes designed for scalable manufacturing — each development stage validating performance and reliability. The next milestone is prototyping for industrialization and field testing.</p>
+      </div>
+
+      <div class="prototype-gallery">
+        <figure class="prototype">
+          <img src="assets/images/prototypes/prototype-1-cad.jpg" srcset="assets/images/prototypes/prototype-1-cad.jpg 1x, assets/images/prototypes/prototype-1-cad@2x.jpg 2x" alt="Early-stage CAD design of internal coil assembly" loading="lazy" />
+        </figure>
+        <figure class="prototype">
+          <img src="assets/images/prototypes/prototype-2-tank.jpg" srcset="assets/images/prototypes/prototype-2-tank.jpg 1x, assets/images/prototypes/prototype-2-tank@2x.jpg 2x" alt="First full-scale prototype tank" loading="lazy" />
+        </figure>
+        <figure class="prototype">
+          <img src="assets/images/prototypes/prototype-3-tank-red.jpg" srcset="assets/images/prototypes/prototype-3-tank-red.jpg 1x, assets/images/prototypes/prototype-3-tank-red@2x.jpg 2x" alt="Prototype tank with auxiliary equipment" loading="lazy" />
+        </figure>
+        <figure class="prototype">
+          <img src="assets/images/prototypes/prototype-4-redblack.jpg" srcset="assets/images/prototypes/prototype-4-redblack.jpg 1x, assets/images/prototypes/prototype-4-redblack@2x.jpg 2x" alt="Active prototype undergoing testing" loading="lazy" />
+        </figure>
+        <figure class="prototype">
+          <img src="assets/images/prototypes/prototype-5-coils.jpg" srcset="assets/images/prototypes/prototype-5-coils.jpg 1x, assets/images/prototypes/prototype-5-coils@2x.jpg 2x" alt="Engineered internal assembly with copper coils" loading="lazy" />
+        </figure>
+        <figure class="prototype">
+          <img src="assets/images/prototypes/prototype-6-rig.jpg" srcset="assets/images/prototypes/prototype-6-rig.jpg 1x, assets/images/prototypes/prototype-6-rig@2x.jpg 2x" alt="Engineering test rig in development workshop" loading="lazy" />
+        </figure>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== TEAM ===== -->
-  <section class="section section-alt" id="team">
+  <section class="section" id="team">
     <div class="wrap">
       <div class="section-head">
         <div class="eyebrow">Team</div>
@@ -303,25 +291,25 @@
   </section>
 
   <!-- ===== BACKED BY ===== -->
-  <section class="section" id="backers">
+  <section class="section section-alt" id="backers">
     <div class="wrap">
       <div class="section-head">
         <div class="eyebrow">Backed by</div>
         <h2>Developed with support from leading energy institutions.</h2>
       </div>
       <ul class="logo-wall">
-        <li><img src="assets/logos/doe.png" srcset="assets/logos/doe.png 1x, assets/logos/doe@2x.png 2x" alt="US Department of Energy" /></li>
-        <li><img src="assets/logos/ornl.png" srcset="assets/logos/ornl.png 1x, assets/logos/ornl@2x.png 2x" alt="Oak Ridge National Laboratory" /></li>
-        <li><img src="assets/logos/gti-energy.png" srcset="assets/logos/gti-energy.png 1x, assets/logos/gti-energy@2x.png 2x" alt="GTI Energy" /></li>
-        <li><img src="assets/logos/socalgas.png" srcset="assets/logos/socalgas.png 1x, assets/logos/socalgas@2x.png 2x" alt="SoCalGas" /></li>
-        <li><img src="assets/logos/nw-natural.png" srcset="assets/logos/nw-natural.png 1x, assets/logos/nw-natural@2x.png 2x" alt="NW Natural" /></li>
-        <li><img src="assets/logos/neea.png" srcset="assets/logos/neea.png 1x, assets/logos/neea@2x.png 2x" alt="Northwest Energy Efficiency Alliance" /></li>
-        <li><img src="assets/logos/apga.png" srcset="assets/logos/apga.png 1x, assets/logos/apga@2x.png 2x" alt="APGA Research Foundation" /></li>
-        <li><img src="assets/logos/icf.png" srcset="assets/logos/icf.png 1x, assets/logos/icf@2x.png 2x" alt="ICF" /></li>
-        <li><img src="assets/logos/utd.png" srcset="assets/logos/utd.png 1x, assets/logos/utd@2x.png 2x" alt="Utilization Technology Development" /></li>
-        <li><img src="assets/logos/municipal-gas-ga.png" srcset="assets/logos/municipal-gas-ga.png 1x, assets/logos/municipal-gas-ga@2x.png 2x" alt="Municipal Gas Authority of Georgia" /></li>
+        <li><a href="https://gasauthority.com/" target="_blank" rel="noopener" aria-label="Municipal Gas Authority of Georgia"><img src="assets/logos/municipal-gas-ga.png" srcset="assets/logos/municipal-gas-ga.png 1x, assets/logos/municipal-gas-ga@2x.png 2x" alt="Municipal Gas Authority of Georgia" /></a></li>
+        <li><a href="https://www.icf.com/" target="_blank" rel="noopener" aria-label="ICF"><img src="assets/logos/icf.png" srcset="assets/logos/icf.png 1x, assets/logos/icf@2x.png 2x" alt="ICF" /></a></li>
+        <li><a href="https://www.apgarf.org/home" target="_blank" rel="noopener" aria-label="APGA Research Foundation"><img src="assets/logos/apga.png" srcset="assets/logos/apga.png 1x, assets/logos/apga@2x.png 2x" alt="APGA Research Foundation" /></a></li>
+        <li><a href="https://www.gti.energy/" target="_blank" rel="noopener" aria-label="GTI Energy"><img src="assets/logos/gti-energy.png" srcset="assets/logos/gti-energy.png 1x, assets/logos/gti-energy@2x.png 2x" alt="GTI Energy" /></a></li>
+        <li><a href="https://neea.org/" target="_blank" rel="noopener" aria-label="Northwest Energy Efficiency Alliance"><img src="assets/logos/neea.png" srcset="assets/logos/neea.png 1x, assets/logos/neea@2x.png 2x" alt="Northwest Energy Efficiency Alliance" /></a></li>
+        <li><a href="https://www.socalgas.com/" target="_blank" rel="noopener" aria-label="SoCalGas"><img src="assets/logos/socalgas.png" srcset="assets/logos/socalgas.png 1x, assets/logos/socalgas@2x.png 2x" alt="SoCalGas" /></a></li>
+        <li><a href="https://www.ornl.gov/" target="_blank" rel="noopener" aria-label="Oak Ridge National Laboratory"><img class="logo-big" src="assets/logos/ornl.png" srcset="assets/logos/ornl.png 1x, assets/logos/ornl@2x.png 2x" alt="Oak Ridge National Laboratory" /></a></li>
+        <li><a href="https://www.utd-co.org/" target="_blank" rel="noopener" aria-label="Utilization Technology Development"><img src="assets/logos/utd.png" srcset="assets/logos/utd.png 1x, assets/logos/utd@2x.png 2x" alt="Utilization Technology Development" /></a></li>
+        <li><a href="https://www.nwnatural.com/" target="_blank" rel="noopener" aria-label="NW Natural"><img class="logo-big" src="assets/logos/nw-natural.png" srcset="assets/logos/nw-natural.png 1x, assets/logos/nw-natural@2x.png 2x" alt="NW Natural" /></a></li>
+        <li><a href="https://www.energy.gov/" target="_blank" rel="noopener" aria-label="US Department of Energy"><img src="assets/logos/doe.png" srcset="assets/logos/doe.png 1x, assets/logos/doe@2x.png 2x" alt="US Department of Energy" /></a></li>
       </ul>
-      <p class="backers-note">Over <strong>$1.4M in non-dilutive support</strong> from the US Department of Energy and partner utilities.</p>
+      <p class="backers-note">Over <strong>$1.4M in non-dilutive support</strong> from partner utilities and the US Department of Energy.</p>
     </div>
   </section>
 
@@ -340,13 +328,24 @@
 
 <footer class="site-footer">
   <div class="wrap footer-wrap">
-    <img src="assets/heatamp-logo.png" srcset="assets/heatamp-logo.png 1x, assets/heatamp-logo@2x.png 2x" alt="HeatAmp" class="footer-logo" height="24" />
+    <img class="footer-logo footer-logo-light" src="assets/heatamp-logo.png" srcset="assets/heatamp-logo.png 1x, assets/heatamp-logo@2x.png 2x" alt="HeatAmp" height="24" />
+    <img class="footer-logo footer-logo-dark" src="assets/heatamp-logo-white.png" srcset="assets/heatamp-logo-white.png 1x, assets/heatamp-logo-white@2x.png 2x" alt="HeatAmp" height="24" />
     <p class="footer-text">© 2026 HeatAmp Sweden AB · Stockholm, Sweden</p>
     <a class="footer-link" href="https://www.linkedin.com/company/heatamp/" target="_blank" rel="noopener" aria-label="HeatAmp on LinkedIn">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.05-1.86-3.05-1.86 0-2.15 1.45-2.15 2.95v5.67H9.34V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.26 2.37 4.26 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.99 0 1.78-.77 1.78-1.73V1.73C24 .77 23.21 0 22.22 0z"/></svg>
     </a>
   </div>
 </footer>
+
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+  <svg class="theme-icon theme-icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+  <svg class="theme-icon theme-icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <circle cx="12" cy="12" r="4"/>
+    <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+  </svg>
+</button>
 
 <script src="main.js"></script>
 </body>

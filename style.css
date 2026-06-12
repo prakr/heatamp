@@ -259,6 +259,18 @@ h3 {
   filter: drop-shadow(0 16px 40px rgba(15,23,42,0.16));
 }
 
+/* Landscape in-home photo treatment */
+.hero-visual-photo img {
+  width: 100%;
+  max-width: 100%;
+  max-height: none;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 24px 48px rgba(15,23,42,0.16), 0 4px 12px rgba(15,23,42,0.06);
+  filter: none;
+}
+
 /* ============== Stat grids ============== */
 
 .stat-grid {
@@ -544,3 +556,304 @@ h3 {
     border-radius: var(--radius-sm);
   }
 }
+
+/* ============== Solution intro (side-by-side) ============== */
+
+.solution-intro {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  align-items: center;
+  margin-bottom: 48px;
+  text-align: left;
+}
+.solution-copy .eyebrow { display: inline-block; margin-bottom: 12px; }
+.solution-copy h2 { margin-bottom: 16px; }
+.solution-visual { display: flex; justify-content: center; }
+.solution-visual img {
+  max-width: 220px;
+  width: 100%;
+  height: auto;
+  filter: contrast(1.08) saturate(1.05) drop-shadow(0 18px 40px rgba(15,23,42,0.15));
+}
+
+@media (min-width: 768px) {
+  .solution-intro {
+    grid-template-columns: 1.5fr 1fr;
+    gap: 56px;
+    margin-bottom: 64px;
+  }
+  .solution-visual img { max-width: 260px; }
+}
+
+/* ============== Savings strip ============== */
+
+.savings-strip {
+  margin-top: 40px;
+  padding: 22px 28px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 14px;
+  justify-content: center;
+  text-align: center;
+}
+.section-alt .savings-strip { background: var(--bg); }
+.savings-label { color: var(--ink-mid); }
+.savings-value {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+}
+.savings-note { color: var(--ink-mid); font-size: 0.95rem; }
+
+/* ============== Feature grid (Solution + Technology subsections) ============== */
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-top: 56px;
+}
+.feature {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px 26px;
+}
+.section-alt .feature { background: var(--bg); }
+.feature h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.feature p { margin: 0; color: var(--ink-mid); font-size: 0.97rem; line-height: 1.55; }
+
+@media (min-width: 768px) {
+  .feature-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+}
+@media (min-width: 1024px) {
+  .feature-grid { gap: 28px; }
+}
+
+/* For Technology section which has only 2 features */
+#technology .feature-grid { grid-template-columns: 1fr; }
+@media (min-width: 768px) {
+  #technology .feature-grid { grid-template-columns: repeat(2, 1fr); max-width: 900px; margin-left: auto; margin-right: auto; }
+}
+
+/* ============== Solution closing line ============== */
+
+.solution-closing {
+  margin: 48px auto 0;
+  max-width: 60ch;
+  text-align: center;
+  font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+/* ============== Opportunity (extra-large headline) ============== */
+
+.opportunity-headline {
+  font-size: clamp(2.2rem, 5vw, 3.4rem) !important;
+  letter-spacing: -0.025em;
+  margin-bottom: 20px;
+}
+
+/* ============== Technology diagram image ============== */
+
+.tech-diagram {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: var(--radius-sm);
+}
+
+/* ============== Prototype gallery ============== */
+
+.prototype-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+.prototype {
+  margin: 0;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+.section-alt .prototype { background: var(--bg); }
+.prototype img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (min-width: 640px) {
+  .prototype-gallery { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+}
+@media (min-width: 1024px) {
+  .prototype-gallery { grid-template-columns: repeat(6, 1fr); gap: 16px; }
+  .prototype { padding: 12px; }
+}
+
+/* ============== Backed By logo wall links + sizing ============== */
+
+.logo-wall a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+.logo-wall a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 6px;
+  border-radius: 4px;
+}
+/* Some logos read smaller — bump them up for visual parity */
+.logo-wall img.logo-big {
+  max-height: 72px;
+}
+@media (min-width: 1024px) {
+  .logo-wall img.logo-big { max-height: 76px; }
+}
+
+/* ============================================================
+   DARK MODE — pure color swap. No layout, font, or size changes.
+   Adds: logo swap, floating toggle button, color overrides.
+   Everything above this block is light-mode CSS and remains
+   byte-identical when dark mode is not active.
+   ============================================================ */
+
+/* Logo swap (only affects light mode by hiding the dark variant by default) */
+.brand img.brand-dark { display: none; }
+[data-theme="dark"] .brand img.brand-light { display: none; }
+[data-theme="dark"] .brand img.brand-dark  { display: block; }
+
+/* Footer logo swap */
+.footer-logo-dark { display: none; }
+[data-theme="dark"] .footer-logo-light { display: none; }
+[data-theme="dark"] .footer-logo-dark  { display: block; }
+
+/* Floating theme toggle button — bottom-right corner */
+.theme-toggle {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 60;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--bg);
+  color: var(--ink);
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(15,23,42,0.12), 0 1px 3px rgba(15,23,42,0.06);
+  transition: transform 150ms ease, border-color 150ms ease, box-shadow 150ms ease;
+}
+.theme-toggle:hover {
+  transform: translateY(-2px);
+  border-color: var(--line-strong);
+  box-shadow: 0 10px 24px rgba(15,23,42,0.18);
+}
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+.theme-toggle .theme-icon-sun { display: none; }
+[data-theme="dark"] .theme-toggle .theme-icon-moon { display: none; }
+[data-theme="dark"] .theme-toggle .theme-icon-sun  { display: block; }
+[data-theme="dark"] .theme-toggle { box-shadow: 0 6px 18px rgba(0,0,0,0.55); }
+
+@media (max-width: 767.98px) {
+  .theme-toggle { bottom: 16px; right: 16px; width: 42px; height: 42px; }
+}
+
+/* Color variable overrides — flip palette to dark */
+[data-theme="dark"] {
+  --bg:           #0a0e1a;
+  --bg-alt:       #111827;
+  --bg-deep:      #050810;
+  --ink:          #f1f5f9;
+  --ink-mid:      #cbd5e1;
+  --ink-muted:    #94a3b8;
+  --line:         #1f2937;
+  --line-strong:  #334155;
+  --accent:       #ef4444;
+  --accent-dark:  #dc2626;
+  --accent-soft:  rgba(239,68,68,0.10);
+}
+
+/* Surfaces that have hardcoded backgrounds need a dark-mode override */
+[data-theme="dark"] .site-header { background: rgba(10,14,26,0.82); }
+[data-theme="dark"] .hero        { background: linear-gradient(180deg, #0a0e1a 0%, #0c1322 100%); }
+[data-theme="dark"] .section-contact { background: #000; }
+
+/* Cosmetic touch-ups for elements that look weird on dark */
+[data-theme="dark"] .team-photo {
+  border-color: var(--bg-alt);
+  box-shadow: 0 0 0 1px var(--line-strong);
+}
+[data-theme="dark"] .logo-wall img {
+  filter: grayscale(100%) invert(0.9) brightness(1.1);
+  opacity: 0.85;
+}
+[data-theme="dark"] .logo-wall li:hover img,
+[data-theme="dark"] .logo-wall a:hover img {
+  filter: none;
+  opacity: 1;
+}
+[data-theme="dark"] .hero-visual-photo img {
+  box-shadow: 0 24px 48px rgba(0,0,0,0.55), 0 4px 12px rgba(0,0,0,0.3);
+}
+[data-theme="dark"] .nav-toggle span { background: var(--ink); }
+[data-theme="dark"] .primary-nav .nav-cta { background: var(--accent); }
+[data-theme="dark"] .primary-nav .nav-cta:hover { background: var(--accent-dark); }
+
+@media (max-width: 767.98px) {
+  [data-theme="dark"] .primary-nav { background: var(--bg-alt); }
+}
+
+/* Funnel diagram (Opportunity section) — dark mode tweaks */
+[data-theme="dark"] .funnel-tier-tam { fill: #1e293b; }     /* TAM needs to lift off the near-black bg */
+[data-theme="dark"] .funnel-tier-sam { fill: #475569; }     /* SAM a bit lighter for separation */
+[data-theme="dark"] .funnel-tier-som { fill: #ef4444; }     /* SOM uses the brighter red */
+[data-theme="dark"] .funnel-aside-line  { stroke: #475569; }
+[data-theme="dark"] .funnel-aside-label { fill: #f1f5f9; }
+[data-theme="dark"] .funnel-aside-note  { fill: #94a3b8; }
+
+/* Product render in Solution — dark mode showcase card */
+[data-theme="dark"] .solution-visual {
+  padding: 18px 20px 22px;
+  background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
+  border-radius: 14px;
+  box-shadow: 0 16px 36px rgba(0,0,0,0.4);
+}
+[data-theme="dark"] .solution-visual img {
+  filter: contrast(1.08) saturate(1.05) drop-shadow(0 8px 20px rgba(15,23,42,0.15));
+}
+
