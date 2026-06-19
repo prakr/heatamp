@@ -26,8 +26,9 @@
   <link rel="stylesheet" href="style.css" />
 
   <script>
-    // Default theme = dark. Light only if user has explicitly chosen it.
-    try { if (localStorage.getItem('heatamp-theme') !== 'light') document.documentElement.setAttribute('data-theme', 'dark'); } catch (e) { document.documentElement.setAttribute('data-theme', 'dark'); }
+    // Default = dark. Light only if user has explicitly chosen it on this version.
+    // Key is versioned (v2) so old saved 'light' values from earlier visits are ignored.
+    try { if (localStorage.getItem('heatamp-theme-v2') !== 'light') document.documentElement.setAttribute('data-theme', 'dark'); } catch (e) { document.documentElement.setAttribute('data-theme', 'dark'); }
   </script>
 </head>
 <body>

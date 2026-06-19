@@ -41,7 +41,7 @@
       const next = current === 'dark' ? 'light' : 'dark';
       if (next === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
       else document.documentElement.removeAttribute('data-theme');
-      try { localStorage.setItem('heatamp-theme', next); } catch (e) {}
+      try { localStorage.setItem('heatamp-theme-v2', next); } catch (e) {}
     });
   }
 })();
