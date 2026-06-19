@@ -26,8 +26,8 @@
   <link rel="stylesheet" href="style.css" />
 
   <script>
-    // Default theme = light. Dark only if user has explicitly chosen it.
-    try { if (localStorage.getItem('heatamp-theme') === 'dark') document.documentElement.setAttribute('data-theme', 'dark'); } catch (e) {}
+    // Default theme = dark. Light only if user has explicitly chosen it.
+    try { if (localStorage.getItem('heatamp-theme') !== 'light') document.documentElement.setAttribute('data-theme', 'dark'); } catch (e) { document.documentElement.setAttribute('data-theme', 'dark'); }
   </script>
 </head>
 <body>
@@ -58,7 +58,7 @@
     <div class="wrap hero-grid">
       <div class="hero-copy">
         <div class="eyebrow">Patented · Field-Ready · 120% UEF</div>
-        <h1 class="display">Powering the future of water heating.</h1>
+        <h1 class="display">Powering the future of water heating</h1>
         <p class="lede">A patented drop-in gas heat pump water heater that uses half the fuel of a conventional unit.</p>
         <div class="cta-row">
           <a href="#contact" class="btn btn-primary">Get in touch</a>
@@ -76,7 +76,7 @@
     <div class="wrap">
       <div class="section-head">
         <div class="eyebrow">The Problem</div>
-        <h2>95% of America's gas water heaters run at minimum efficiency.</h2>
+        <h2>95% of America's gas water heaters run at minimum efficiency</h2>
         <p class="lede">4 million residential gas water heaters are sold in North America every year. Most operate at a Uniform Energy Factor of just 62–64%. As emissions targets tighten and gas prices climb, water heating is the largest untapped efficiency opportunity in residential heating. The transition is also driven by the societal push toward decarbonization and lower CO₂ emissions.</p>
       </div>
       <div class="stat-grid">
@@ -89,8 +89,8 @@
           <div class="stat-label">Industry-standard energy factor (UEF)</div>
         </div>
         <div class="stat">
-          <div class="stat-value">12,500<span class="stat-unit">kWh</span></div>
-          <div class="stat-label">Gas burned to deliver 27 million Btu / 8,000 kWh — a single-family annual hot water consumption</div>
+          <div class="stat-value">8,000<span class="stat-unit">kWh</span></div>
+          <div class="stat-label">Natural gas consumed to deliver 17.5 million BTU / 5,120 kWh of hot water heat — a single-family annual hot water demand</div>
         </div>
       </div>
     </div>
@@ -102,8 +102,8 @@
       <div class="solution-intro">
         <div class="solution-copy">
           <div class="eyebrow">The Solution</div>
-          <h2>The smarter way to heat water.</h2>
-          <p class="lede">Replace your existing water heater with a high-efficiency solution that requires no gas or electricity upgrades, reduces energy costs and emissions, and delivers the same dependable comfort you've always enjoyed.</p>
+          <h2>The smarter way to heat water</h2>
+          <p class="lede">Replace existing water heaters with a high-efficiency solution that requires no gas or electricity upgrades, reduces energy costs and emissions, and delivers the same dependable comfort you've always enjoyed.</p>
         </div>
         <div class="solution-visual">
           <img src="assets/images/product-solution.png" srcset="assets/images/product-solution.png 1x, assets/images/product-solution@2x.png 2x" alt="HeatAmp gas heat pump water heater" />
@@ -120,19 +120,19 @@
           <div class="stat-label">Gas savings vs. conventional water heaters</div>
         </div>
         <div class="stat">
-          <div class="stat-value">1.0–1.8<span class="stat-unit">t</span></div>
+          <div class="stat-value">0.6–1.2<span class="stat-unit">t</span></div>
           <div class="stat-label">CO₂ avoided per home, per year</div>
         </div>
       </div>
 
       <div class="savings-strip">
         <span class="eyebrow savings-label">Potential savings</span>
-        <span class="savings-value">$200–500 / year</span>
-        <span class="savings-note">on household energy bills, depending on usage</span>
+        <span class="savings-value">$150–300 / year</span>
+        <span class="savings-note">on household energy bills, depending on usage and gas price</span>
       </div>
 
       <div class="patents-strip">
-        <span class="eyebrow patents-label">Patents</span>
+        <span class="eyebrow patents-label">Patented in</span>
         <span class="patents-list">United States · United Kingdom · Europe (EPO) · China · India · Japan</span>
       </div>
 
@@ -142,7 +142,7 @@
           <p>The unique proprietary low-complexity architecture enables a compact, robust and cost-efficient design that supports scalable manufacturing and broad residential adoption. The technology delivers high-efficiency water heating in a drop-in format, fitting within the footprint of a conventional gas-fired storage water heater and requiring no gas or electrical infrastructure upgrades.</p>
         </article>
         <article class="feature">
-          <h3>Safe and Sustainable Design</h3>
+          <h3>Safe and Sustainable</h3>
           <p>The thermochemical heat pump is hermetically sealed and uses a natural refrigerant with zero ozone depletion potential (ODP) and zero global warming potential (GWP). The system is designed to deliver robust long-term performance whilst minimizing environmental impact.</p>
         </article>
         <article class="feature">
@@ -160,7 +160,7 @@
     <div class="wrap">
       <div class="section-head">
         <div class="eyebrow">Opportunity</div>
-        <h2 class="display opportunity-headline">A $2.7B replacement market in transition.</h2>
+        <h2 class="display opportunity-headline">A $2.7B replacement market in transition</h2>
         <p class="lede">4 million gas water heaters are replaced annually in North America. Today, high-efficiency models represent only ~5% of the market, but tightening regulations are expected to drive that share toward 40%. HeatAmp is positioned to claim the cost-effective end of that growth.</p>
       </div>
 
@@ -186,6 +186,17 @@
           <text class="funnel-aside-note" x="650" y="320" font-family="Inter, sans-serif" font-size="10" fill="#64748b">projected segment growth</text>
         </svg>
       </div>
+
+      <div class="opportunity-blocks">
+        <article class="opp-block">
+          <h3>Rest of the world</h3>
+          <p>Gas water heating is a global challenge, with Europe and fast-growing markets like China and India being key areas of interest. Opportunities in these regions depend on suitable manufacturing partners.</p>
+        </article>
+        <article class="opp-block">
+          <h3>A platform technology</h3>
+          <p>The base technology has potential for other applications and markets — it can be seen as a scalable, adaptable platform that extends well beyond residential water heating.</p>
+        </article>
+      </div>
     </div>
   </section>
 
@@ -194,7 +205,7 @@
     <div class="wrap">
       <div class="section-head">
         <div class="eyebrow">Technology</div>
-        <h2>The thermochemical heat pump.</h2>
+        <h2>The thermochemical heat pump</h2>
         <p class="lede">The HeatAmp water heater combines a high-efficiency gas burner with a novel thermochemical heat pump to produce hot water using significantly less gas than conventional water heaters.</p>
       </div>
 
@@ -209,8 +220,8 @@
           <p>The majority of conventional gas water heaters typically achieve efficiencies around 60%. By combining gas combustion with ambient heat recovery, the HeatAmp system can achieve gas efficiencies of 120–125%. This means more hot water from every unit of gas consumed, reducing both heating costs and environmental impact.</p>
         </article>
         <article class="feature">
-          <h3>Designed for Success</h3>
-          <p>The scalable, low-complexity architecture enables significant reductions in size and cost, making it well-suited for large-scale manufacturing and residential deployment.</p>
+          <h3>Designed for mass adoption</h3>
+          <p>The scalable, low-complexity heat pump architecture enables significant reductions in size and cost, making it well-suited for large-scale manufacturing and residential deployment.</p>
         </article>
       </div>
     </div>
@@ -220,29 +231,30 @@
   <section class="section section-alt" id="development">
     <div class="wrap">
       <div class="section-head">
-        <div class="eyebrow">7 Years of Development</div>
-        <h2>From breadboard to engineered prototype.</h2>
-        <p class="lede">Built from the ground up over the past seven years in collaboration with leading industry partners. Progressing from early breadboard systems to fully engineered prototypes designed for scalable manufacturing — each development stage validating performance and reliability. The next milestone is prototyping for industrialization and field testing.</p>
+        <div class="eyebrow">8 years in development</div>
+        <h2>From breadboard to engineered prototype</h2>
+        <p class="lede">Built from the ground up over the past eight years in collaboration with leading industry partners — progressing from early breadboard systems to fully engineered prototypes designed for scalable manufacturing.</p>
+        <p class="lede">Each development stage has validated performance and reliability. The next milestone is prototyping for industrialization and field testing.</p>
       </div>
 
       <div class="prototype-gallery">
         <figure class="prototype">
-          <img src="assets/images/prototypes/prototype-1-cad.jpg" srcset="assets/images/prototypes/prototype-1-cad.jpg 1x, assets/images/prototypes/prototype-1-cad@2x.jpg 2x" alt="Early-stage CAD design of internal coil assembly" loading="lazy" />
+          <img src="assets/images/prototypes/prototype-4-redblack.jpg" srcset="assets/images/prototypes/prototype-4-redblack.jpg 1x, assets/images/prototypes/prototype-4-redblack@2x.jpg 2x" alt="Active prototype undergoing testing" loading="lazy" />
         </figure>
         <figure class="prototype">
-          <img src="assets/images/prototypes/prototype-2-tank.jpg" srcset="assets/images/prototypes/prototype-2-tank.jpg 1x, assets/images/prototypes/prototype-2-tank@2x.jpg 2x" alt="First full-scale prototype tank" loading="lazy" />
+          <img src="assets/images/prototypes/prototype-6-rig.jpg" srcset="assets/images/prototypes/prototype-6-rig.jpg 1x, assets/images/prototypes/prototype-6-rig@2x.jpg 2x" alt="Engineering test rig in development workshop" loading="lazy" />
         </figure>
         <figure class="prototype">
           <img src="assets/images/prototypes/prototype-3-tank-red.jpg" srcset="assets/images/prototypes/prototype-3-tank-red.jpg 1x, assets/images/prototypes/prototype-3-tank-red@2x.jpg 2x" alt="Prototype tank with auxiliary equipment" loading="lazy" />
         </figure>
         <figure class="prototype">
-          <img src="assets/images/prototypes/prototype-4-redblack.jpg" srcset="assets/images/prototypes/prototype-4-redblack.jpg 1x, assets/images/prototypes/prototype-4-redblack@2x.jpg 2x" alt="Active prototype undergoing testing" loading="lazy" />
-        </figure>
-        <figure class="prototype">
           <img src="assets/images/prototypes/prototype-5-coils.jpg" srcset="assets/images/prototypes/prototype-5-coils.jpg 1x, assets/images/prototypes/prototype-5-coils@2x.jpg 2x" alt="Engineered internal assembly with copper coils" loading="lazy" />
         </figure>
         <figure class="prototype">
-          <img src="assets/images/prototypes/prototype-6-rig.jpg" srcset="assets/images/prototypes/prototype-6-rig.jpg 1x, assets/images/prototypes/prototype-6-rig@2x.jpg 2x" alt="Engineering test rig in development workshop" loading="lazy" />
+          <img src="assets/images/prototypes/prototype-1-cad.jpg" srcset="assets/images/prototypes/prototype-1-cad.jpg 1x, assets/images/prototypes/prototype-1-cad@2x.jpg 2x" alt="Early-stage CAD design of internal coil assembly" loading="lazy" />
+        </figure>
+        <figure class="prototype">
+          <img src="assets/images/prototypes/prototype-2-tank.jpg" srcset="assets/images/prototypes/prototype-2-tank.jpg 1x, assets/images/prototypes/prototype-2-tank@2x.jpg 2x" alt="First full-scale prototype tank" loading="lazy" />
         </figure>
       </div>
     </div>
@@ -253,7 +265,7 @@
     <div class="wrap">
       <div class="section-head">
         <div class="eyebrow">Team</div>
-        <h2>Built by veterans of sorption, heat pumps, and gas appliances.</h2>
+        <h2>Built by veterans of sorption, heat pumps, and gas appliances</h2>
       </div>
       <div class="team-grid">
         <article class="team-card">
@@ -295,7 +307,7 @@
     <div class="wrap">
       <div class="section-head">
         <div class="eyebrow">Backed by</div>
-        <h2>Developed with support from leading energy institutions.</h2>
+        <h2>Developed with support from leading energy institutions</h2>
       </div>
       <ul class="logo-wall">
         <li><a href="https://gasauthority.com/" target="_blank" rel="noopener" aria-label="Municipal Gas Authority of Georgia"><img src="assets/logos/municipal-gas-ga.png" srcset="assets/logos/municipal-gas-ga.png 1x, assets/logos/municipal-gas-ga@2x.png 2x" alt="Municipal Gas Authority of Georgia" /></a></li>
@@ -317,8 +329,8 @@
   <section class="section section-contact" id="contact">
     <div class="wrap contact-wrap">
       <div class="eyebrow">Get in Touch</div>
-      <h2>Building something here. Want to talk?</h2>
-      <p class="lede">For partnership inquiries, technology questions, or to learn more about HeatAmp, reach out directly.</p>
+      <h2>Do you want to know more?</h2>
+      <p class="lede">For partnership inquiries, investment, technology questions, or to learn more about HeatAmp, reach out directly.</p>
       <a href="mailto:magnus.ekblad@heatamp.com" class="btn btn-primary btn-large">magnus.ekblad@heatamp.com</a>
       <p class="contact-address">HeatAmp Sweden AB · Stockholm, Sweden</p>
     </div>

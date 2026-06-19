@@ -669,6 +669,40 @@ h3 {
   margin-bottom: 20px;
 }
 
+/* "Rest of the world" + "Platform technology" sub-blocks under the funnel */
+.opportunity-blocks {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-top: 56px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.opp-block {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 26px 24px;
+}
+.section-alt .opp-block { background: var(--bg); }
+.opp-block h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.opp-block p {
+  margin: 0;
+  color: var(--ink-mid);
+  font-size: 0.97rem;
+  line-height: 1.55;
+}
+@media (min-width: 768px) {
+  .opportunity-blocks { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+}
+
 /* ============== Technology diagram image ============== */
 
 .tech-diagram {
