@@ -30,6 +30,9 @@
     // Key is versioned (v2) so old saved 'light' values from earlier visits are ignored.
     try { if (localStorage.getItem('heatamp-theme-v2') !== 'light') document.documentElement.setAttribute('data-theme', 'dark'); } catch (e) { document.documentElement.setAttribute('data-theme', 'dark'); }
   </script>
+
+  <!-- Umami analytics — privacy-friendly, no cookies -->
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="05acc923-8e48-4039-ac47-c3c66774ac85"></script>
 </head>
 <body>
 
